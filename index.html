@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deekshitha Kashetty | Professional Learning Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #0f172a;
+            --accent: #2563eb;
+            --bg: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #334155;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
+            --featured-bg: linear-gradient(135deg, #eff6ff 0%, #ffffff 100%);
+            --featured-border: #3b82f6;
+            --featured-badge-bg: #334155;
+            --featured-badge-text: #f1f5f9;
+            --featured-accent: #94a3b8;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, sans-serif;
+            background-color: var(--bg);
+            color: var(--text-main);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        .container { max-width: 1200px; margin: 0 auto; padding: 40px 20px; }
+
+        header {
+            text-align: center;
+            padding: 60px 20px;
+            background: var(--primary);
+            color: white;
+            border-radius: 16px;
+            margin-bottom: 50px;
+        }
+
+        h1 { margin: 0; font-size: 2.5rem; letter-spacing: -1px; }
+        .subtitle { color: #94a3b8; font-size: 1.1rem; margin-top: 10px; }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            margin: 50px 0 25px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--border);
+        }
+
+        .section-header i { color: var(--accent); margin-right: 15px; font-size: 1.5rem; }
+        .section-header h2 { margin: 0; font-size: 1.75rem; color: var(--primary); }
+
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 24px;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
+
+        .card.featured {
+            background: var(--featured-bg);
+            border: 2px solid var(--featured-border);
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.1);
+        }
+
+        /* .featured-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: var(--accent);
+            color: white;
+            font-size: 0.65rem;
+            font-weight: 800;
+            padding: 3px 8px;
+            border-radius: 4px;
+            text-transform: uppercase;
+        } */
+
+        .card.featured {
+            background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+            border: 2px solid #cbd5e1; /* Subtle, thicker border for featured items */
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+        }
+        .featured-badge {
+            position: absolute;
+            top: -12px; /* Positioned slightly overlapping the top border for a modern look */
+            left: 20px;
+            background: var(--featured-badge-bg);
+            color: var(--featured-badge-text);
+            font-size: 0.7rem;
+            font-weight: 700;
+            padding: 4px 12px;
+            border-radius: 6px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            border: 1px solid var(--featured-accent);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent);
+            box-shadow: 0 10px 20px -5px rgba(0,0,0,0.1);
+        }
+
+        .card-date {
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: var(--accent);
+            text-transform: uppercase;
+            margin-bottom: 8px;
+        }
+
+        .card-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin: 0 0 8px 0;
+            min-height: 2.6em;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .card-org {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .card-footer {
+            margin-top: auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .link-btn {
+            color: var(--accent);
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .link-btn:hover { text-decoration: underline; }
+
+        @media (max-width: 600px) {
+            .portfolio-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>Deekshitha Kashetty</h1>
+        <p class="subtitle">Complete Portfolio of Certifications, Competitions & Workshops</p>
+    </header>
+
+    <div class="section-header">
+        <i class="fas fa-star"></i>
+        <h2>Featured Immersive Programs</h2>
+    </div>
+
+    
+    
+    <div class="portfolio-grid">
+
+        <div class="card featured">
+            <span class="featured-badge">AI/ML Project-Based</span>
+            <span class="card-date">Nov 2025</span>
+            <h3 class="card-title">21 Projects, 21 Days: ML & GenAI</h3>
+            <span class="card-org">GeeksforGeeks</span>
+            <!-- <p style="font-size: 0.85rem; color: var(--text-muted);">Implementation of 21 unique AI/ML projects.</p> -->
+            <a href="https://media.geeksforgeeks.org/courses/certificates/542eac73ffce5c6f763a4b3befa5ae06.pdf" class="link-btn" target="_blank">View Credential <i class="fas fa-external-link-alt"></i></a>
+        </div>
+
+
+        <div class="card featured">
+            <span class="featured-badge">DSA</span>
+            <span class="card-date">June 2024 - Oct 2024</span>
+            <h3 class="card-title">Smart Coder (Bronze Certified)</h3>
+            <span class="card-org">Smart Interviews</span>
+            <!-- <p style="font-size: 0.85rem; color: var(--text-muted);">3 Month program focused on DSA and Problem Solving.</p> -->
+            <a href="https://smartinterviews.in/certificate/5563473f" class="link-btn" target="_blank">Verify Certificate <i class="fas fa-external-link-alt"></i></a>
+        </div>
+
+        
+        <div class="card featured">
+            <span class="featured-badge">Node.JS Web Development</span>
+            <span class="card-date">Sept 2022 - Nov 2022</span>
+            <h3 class="card-title">Full Stack Web Development</h3>
+            <span class="card-org">StudyOwl.in | BVRIT</span>
+            <!-- <p style="font-size: 0.85rem; color: var(--text-muted);">Comprehensive exposure to Node.js and full-stack development.</p> -->
+            <a href="https://drive.google.com/file/d/1J0ZoAda3rGWjAYJWRSiX-T759b43v9Ki/view" class="link-btn" target="_blank">View Certificate <i class="fas fa-external-link-alt"></i></a>
+        </div>
+
+        <div class="card featured">
+            <span class="featured-badge">Data Analysis</span>
+            <span class="card-date">Jan 2024 - Mar 2024</span>
+            <h3 class="card-title">Data Analytics Training</h3>
+            <span class="card-org">Accenture & Centum Foundation</span>
+            <!-- <p style="font-size: 0.85rem; color: var(--text-muted);">Industry-aligned training on data processing and visualization.</p> -->
+            <a href="https://drive.google.com/file/d/1LyTpqnFSD6X2G1qa_CBU2zbs2SvxYKcK/view" class="link-btn" target="_blank">View Certificate <i class="fas fa-external-link-alt"></i></a>
+        </div>
+
+        <div class="card featured">
+            <span class="featured-badge">40-Day CP Camp</span>
+            <span class="card-date">Jan 2022 - Feb 2022</span>
+            <h3 class="card-title">Competitive Programming Camp</h3>
+            <span class="card-org">Peer Programming Hub</span>
+            <!-- <p style="font-size: 0.85rem; color: var(--text-muted);">Industry-aligned training on data processing and visualization.</p> -->
+            <a href="https://drive.google.com/file/d/1HC5aUJ-V_qdUubaVoFvL0uGJJ1c1K8I9/view" class="link-btn" target="_blank">View Certificate <i class="fas fa-external-link-alt"></i></a>
+        </div>
+    </div>
+
+    <div class="section-header">
+        <i class="fas fa-certificate"></i>
+        <h2>Online Learning & Courses</h2>
+    </div>
+    <div class="portfolio-grid">
+        <div class="card">
+            <span class="card-date">Feb 2025 - Aug 2025</span>
+            <h3 class="card-title">Pluralsight Software Development Courses</h3>
+            <span class="card-org">Pluralsight</span>
+            <div class="card-footer">
+                <a href="https://drive.google.com/file/d/1iR4UwwUdjLC3HBgWyuXn02N_WQ-rkYG1/view?usp=sharing" class="link-btn" target="_blank">Verify Certificates <i class="fas fa-external-link-alt"></i></a>
+            </div>
+        </div>
+
+        <div class="card">
+            <span class="card-date">Feb 2025 - Feb 2026</span>
+            <h3 class="card-title">Pluralsight ML, AI, Gen AI Courses</h3>
+            <span class="card-org">Pluralsight</span>
+            <div class="card-footer">
+                <a href="https://drive.google.com/file/d/1LdcxFUrbEHwyCEPAjqJnMsabq-5_jxnA/view?usp=sharing" class="link-btn" target="_blank">Verify Certificates <i class="fas fa-external-link-alt"></i></a>
+            </div>
+        </div>
+
+        <div class="card">
+            <span class="card-date">Jan 2026</span>
+            <h3 class="card-title">Python (Basic)</h3>
+            <span class="card-org">HackerRank</span>
+            <span class="featured-badge"><i class="fas fa-check-circle"></i> HackerRank Verified Skills</span>
+            <div class="card-footer">
+                <a href="https://www.hackerrank.com/certificates/9f808ea1145d" class="link-btn" target="_blank">Verify Credential <i class="fas fa-external-link-alt"></i></a>
+            </div>
+        </div>
+
+        <div class="card">
+            <span class="card-date">Jan 2026</span>
+            <h3 class="card-title">SQL (Advanced)</h3>
+            <span class="card-org">HackerRank</span>
+            <span class="featured-badge"><i class="fas fa-check-circle"></i> HackerRank Verified Skills</span>
+            <div class="card-footer">
+                <a href="https://www.hackerrank.com/certificates/374e50b50747" class="link-btn" target="_blank">Verify Credential <i class="fas fa-external-link-alt"></i></a>
+            </div>
+        </div>
+    
+        <div class="card">
+            <span class="card-date">Feb 16, 2022</span>
+            <h3 class="card-title">C++ for Beginners</h3>
+            <span class="card-org">Infosys Springboard</span>
+            <div class="card-footer">
+                <a href="https://drive.google.com/file/d/1vXmFwdvFj2HiBp3rO0e3UmQ3XxotZ2Cr/view" class="link-btn" target="_blank">View Certificate <i class="fas fa-external-link-alt"></i></a>
+            </div>
+        </div>
+        <div class="card">
+            <span class="card-date">Feb 2022</span>
+            <h3 class="card-title">OOPS Concepts in C++</h3>
+            <span class="card-org">Great Learning Academy</span>
+            <div class="card-footer">
+                <a href="https://www.mygreatlearning.com/certificate/PVCWGMVZ" class="link-btn" target="_blank">Verify Certificate <i class="fas fa-external-link-alt"></i></a>
+            </div>
+        </div>
+        <div class="card">
+            <span class="card-date">Sept 29, 2021</span>
+            <h3 class="card-title">Python 3: Beginner to Advanced</h3>
+            <span class="card-org">Udemy</span>
+            <div class="card-footer">
+                <a href="https://www.udemy.com/certificate/UC-b5269bc2-6ab4-4bb1-bdee-df71944c6711/" class="link-btn" target="_blank">Verify Certificate <i class="fas fa-external-link-alt"></i></a>
+            </div>
+        </div>
+
+        <div class="card">
+            <span class="card-date">Aug 2021</span>
+            <h3 class="card-title">Week of Web</h3>
+            <span class="card-org">StudyOwl.in</span>
+            <div class="card-footer">
+                <a href="https://drive.google.com/file/d/1vbnsw0A80rgxESUdImaPABrGdRzMpo5R/view?usp=sharing" class="link-btn" target="_blank">Course Certificate <i class="fas fa-external-link-alt"></i></a>
+            </div>
+            <div class="card-footer">
+                <a href="https://drive.google.com/file/d/1vzvsvawf7wLdOmmuNjPCxHgNW7buC-EP/view?usp=sharing" class="link-btn" target="_blank">Learnathon Certificate <i class="fas fa-external-link-alt"></i></a>
+            </div>
+        </div>
+        <div class="card">
+            <span class="card-date">Jun 6, 2021</span>
+            <h3 class="card-title">AI For Everyone</h3>
+            <span class="card-org">DeepLearning.AI (Coursera)</span>
+            <div class="card-footer">
+                <a href="https://www.coursera.org/account/accomplishments/verify/Y3AHB874LKC8" class="link-btn" target="_blank">Verify Certificate <i class="fas fa-external-link-alt"></i></a>
+            </div>
+        </div>
+        <div class="card">
+            <span class="card-date">Dec 15, 2020</span>
+            <h3 class="card-title">C Programming For Beginners</h3>
+            <span class="card-org">Udemy</span>
+            <div class="card-footer">
+                <a href="https://ude.my/UC-d2077262-86e7-4a26-a1f1-71c1a5490654" class="link-btn" target="_blank">Verify Certificate <i class="fas fa-external-link-alt"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <div class="section-header">
+        <i class="fas fa-trophy"></i>
+        <h2>Coding Competitions</h2>
+    </div>
+    <div class="portfolio-grid">
+
+        <div class="card">
+            <span class="card-date">April 2022</span>
+            <h3 class="card-title">Google Coding Competitions 2022</h3>
+            <span class="card-org">Google</span>
+            <div class="card-footer">
+                <a href="https://drive.google.com/file/d/1Lko3kJv1jNUU7R13sLksnCGA06cIJLm_/view?usp=sharing" class="link-btn" target="_blank">Certificates <i class="fas fa-external-link-alt"></i></a>
+            </div>
+        </div>
+        
+
+        <div class="card">
+            <span class="card-date">March 2022</span>
+            <h3 class="card-title">Newton's Grand Contest (Global Rank 9087)</h3>
+            <span class="card-org">Newton School</span>
+            <div class="card-footer">
+                <a href="https://drive.google.com/file/d/1wOy5fZEh4TmHhwy6tPcGv9h9WMECWKp9/view" class="link-btn" target="_blank">Certificate <i class="fas fa-external-link-alt"></i></a>
+            </div>
+        </div>
+
+        <div class="card">
+            <span class="card-date">Feb 6, 2022</span>
+            <h3 class="card-title">Scaler CodeX 2.0 (National Level)</h3>
+            <span class="card-org">Scaler / InterviewBit</span>
+            <div class="card-footer">
+                <a href="https://drive.google.com/file/d/1WTHMNzzOfaU1FhZyXKPOzjWRYbdU5FZR/view" class="link-btn" target="_blank">Certificate <i class="fas fa-external-link-alt"></i></a>
+            </div>
+        </div>
+        
+        <div class="card">
+            <span class="card-date">Dec 15, 2021</span>
+            <h3 class="card-title">Convergence 2K21 Coding Contest</h3>
+            <span class="card-org">VNR VJIET</span>
+            <div class="card-footer">
+                <a href="https://drive.google.com/file/d/1g3jM8yRHUrGjz_XV3hdfiwN-oszAoT0u/view?usp=sharing" class="link-btn" target="_blank">View Certificate <i class="fas fa-external-link-alt"></i></a>
+            </div>
+        </div>
+        <div class="card">
+            <span class="card-date">Oct 2021</span>
+            <h3 class="card-title">SnackDown 2021 (Qualifier Round)</h3>
+            <span class="card-org">CodeChef</span>
+            <div class="card-footer">
+                <a href="https://www.codechef.com/certificates/public/267c082" class="link-btn" target="_blank">Verify Certificate <i class="fas fa-external-link-alt"></i></a>
+            </div>
+        </div>
+            
+        
+    </div>
+
+    <div class="section-header">
+        <i class="fas fa-laptop-code"></i>
+        <h2>Workshops & Bootcamps</h2>
+    </div>
+    <div class="portfolio-grid">
+        <div class="card">
+            <span class="card-date">Feb 9, 2025</span>
+            <h3 class="card-title">AI Tools and ChatGPT Workshop</h3>
+            <span class="card-org">be10x</span>
+            <div class="card-footer">
+                <a href="https://drive.google.com/file/d/171yla26N3LBL7tTQQhesLkg0FSNgWLlM/view" class="link-btn" target="_blank">View Certificate <i class="fas fa-external-link-alt"></i></a>
+            </div>
+        </div>
+        
+        <div class="card">
+            <span class="card-date">Dec 18, 2021</span>
+            <h3 class="card-title">Self Driving Car (3-Day Workshop)</h3>
+            <span class="card-org">TechTrunk / BVRIT</span>
+             <div class="card-footer">
+                <a href="https://drive.google.com/file/d/1vaN0e9I4ScvMkmOFUAgjKztuhX6ot9mP/view?usp=sharing" class="link-btn" target="_blank">View Participation <i class="fas fa-external-link-alt"></i></a>
+            </div>
+        </div>
+        <div class="card">
+            <span class="card-date">Oct 2021</span>
+            <h3 class="card-title">Microsoft Student Summit</h3>
+            <span class="card-org">Microsoft</span>
+            <div class="card-footer">
+                <a href="https://drive.google.com/file/d/1-VcSf6pmSJupH4MB1_sGNK-OCAzU34_e/view" class="link-btn" target="_blank">View Participation <i class="fas fa-external-link-alt"></i></a>
+            </div>
+        </div>
+        <div class="card">
+            <span class="card-date">June 4, 2021</span>
+            <h3 class="card-title">Cyber Security as a Career</h3>
+            <span class="card-org">BVRIT Hyderabad</span>
+            <div class="card-footer">
+                <a href="https://drive.google.com/file/d/1vQhSWFEzv1rt-fmHwJDNNtJQvYcViFJ8/view?usp=sharing" class="link-btn" target="_blank">View Certificate <i class="fas fa-external-link-alt"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <footer style="text-align: center; padding: 60px 0; color: var(--text-muted); font-size: 0.9rem;">
+        © 2026 Deekshitha Kashetty • Hosted on GitHub Pages
+    </footer>
+</div>
+
+</body>
+</html>
